@@ -29,7 +29,7 @@
                 <br>
                 <h4>Link to a Photo Image</h4>
                 <div class="input-group">
-                    <input id="formImage" class="form-control" type="text" name="name" placeholder="http://yomug.com.jpg/">
+                    <input id="formImage" class="form-control" type="text" name="photo" placeholder="http://yomug.com.jpg/">
                     <span class="input-group-addon">(Required)</span>
                 </div>
             </div>
@@ -176,7 +176,7 @@
             </div>
         </div>
 
-        <button id="submitButton" type="submit" class="btn btn-md btn-danger btn-block">
+        <button id="submit" type="submit" class="btn btn-md btn-danger btn-block">
             <h4>
                 <span class="glyphicon glyphicon-thumbs-up"></span> Submit</h4>
         </button>
@@ -219,6 +219,42 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+
+    <script>
+        var compForm;
+
+        $(document).ready(function () {
+
+            $("#submit").click(function (event) {
+                event,
+                preventDefault();
+
+                var formInput = {
+                    name: $("formName").val().trim(),
+                    photo: $("formImage").val().trim(),
+                    scores = [
+                        $("#Q1").val().trim(),
+                        $("#Q2").val().trim(),
+                        $("#Q3").val().trim(),
+                        $("#Q4").val().trim(),
+                        $("#Q5").val().trim(),
+                        $("#Q6").val().trim(),
+                        $("#Q7").val().trim(),
+                        $("#Q8").val().trim(),
+                        $("#Q9").val().trim(),
+                        $("#Q10").val().trim()
+                    ]
+                };
+
+                $.post("/api/friends", formInput)
+                .done(function (data) {
+                    $("#matchName").text(data.name);
+                    $("#matchImg").attr("src", data.photo);
+                    $("#resultsModal").modal("toggle");
+                })
+            })
+        });
+    </script>
 
 </body>
 
