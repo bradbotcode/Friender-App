@@ -205,7 +205,7 @@
 
                     <div class="modal-body">
                         <h2 id="matchName"></h2>
-                        <img id="matchImg" src="" alt="Image Not Found" style="max-width: 350px;">
+                        <img id="matchImg" src="" alt="Profile Pic" style="max-width: 350px;">
                     </div>
 
                     <div class="modal-footer">
@@ -226,32 +226,33 @@
         $(document).ready(function () {
 
             $("#submit").click(function (event) {
-                event,
-                preventDefault();
+                event.preventDefault();
 
                 var formInput = {
-                    name: $("formName").val().trim(),
-                    photo: $("formImage").val().trim(),
-                    scores = [
-                        $("#Q1").val().trim(),
-                        $("#Q2").val().trim(),
-                        $("#Q3").val().trim(),
-                        $("#Q4").val().trim(),
-                        $("#Q5").val().trim(),
-                        $("#Q6").val().trim(),
-                        $("#Q7").val().trim(),
-                        $("#Q8").val().trim(),
-                        $("#Q9").val().trim(),
-                        $("#Q10").val().trim()
+                    name: $("#formName").val(),
+                    pic: $("#formImage").val(),
+                    scores: [
+                        $("#Q1").val(),
+                        $("#Q2").val(),
+                        $("#Q3").val(),
+                        $("#Q4").val(),
+                        $("#Q5").val(),
+                        $("#Q6").val(),
+                        $("#Q7").val(),
+                        $("#Q8").val(),
+                        $("#Q9").val(),
+                        $("#Q10").val()
                     ]
                 };
 
                 $.post("/api/friends", formInput)
-                .done(function (data) {
-                    $("#matchName").text(data.name);
-                    $("#matchImg").attr("src", data.photo);
-                    $("#resultsModal").modal("toggle");
-                })
+                    .done(function (data) {
+                        $("#matchName").text(data.name);
+                        $("#matchImg").attr("src", data.pic);
+                        $("#resultsModal").modal("toggle");
+                        console.log(data.name)
+                        console.log(data.pic)
+                    })
             })
         });
     </script>
