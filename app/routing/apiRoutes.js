@@ -14,25 +14,30 @@ module.exports = function (app) {
 
         var match = "";
         var matchImg = "";
-        var totalDif = 50;
+        var totalDiff = 100;
 
         for (i = 0; i < friends.length; i++) {
             var diff = 0;
             for (j = 0; j < userRes.length; j++) {
                 diff += Math.abs(friends[i].scores[j] - userRes[j]);
+                console.log(diff);
             }
+            console.log('diff = ' + diff);
 
             if (diff < totalDiff) {
                 totalDiff = diff;
                 match = friends[i].name;
                 matchImg = friends[i].pic;
+                console.log("match diff = " + diff);
+                console.log("name = " + match);
+                console.log("image = " + matchImg);
             }
         }
 
         friends.push(userInput);
 
         res.json({
-            matchName: matchName,
+            matchName: match,
             matchImg: matchImg
         });
     });
