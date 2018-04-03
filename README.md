@@ -1,8 +1,6 @@
 # Friender
 Survey Based Friend Matching Application
 
-# Friend Finder Application
-
 ## Description
 
 *Friender* is a survey based friend matching application. The user responds to 10 questions with values from 1 (Strongly Disagree) to 5 (Strongly Agree). When the survey is submitted, the user's answers are measured against other user answers and a match is determined based on similarity. Similarity is defined as the lowest absolute difference in response value for all ten questions combined.
