@@ -5,7 +5,7 @@ var path = require("path");
 
 //express & port 
 var app = express();
-var PORT = process.env.PORT || 3030;
+var PORT = process.env.PORT || 3000;
 
 //middleware for parsing req bodies
 app.use(bodyParser.json());
