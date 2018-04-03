@@ -1,6 +1,6 @@
 // Pull in required dependencies
-var path = require('path');
-var friends = require('../data/friends.js');
+var path = require("path");
+var friends = require("../data/friends.js");
 
 // Export API routes
 module.exports = function (app) {
@@ -22,7 +22,7 @@ module.exports = function (app) {
                 diff += Math.abs(friends[i].scores[j] - userRes[j]);
                 console.log(diff);
             }
-            console.log('diff = ' + diff);
+            console.log("diff = " + diff);
 
             if (diff < friendDiff) {
                 friendDiff = diff;
