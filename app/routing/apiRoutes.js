@@ -14,7 +14,7 @@ module.exports = function (app) {
 
         var match = "";
         var matchImg = "";
-        var totalDiff = 100;
+        var friendDiff = 100;
 
         for (i = 0; i < friends.length; i++) {
             var diff = 0;
@@ -24,8 +24,8 @@ module.exports = function (app) {
             }
             console.log('diff = ' + diff);
 
-            if (diff < totalDiff) {
-                totalDiff = diff;
+            if (diff < friendDiff) {
+                friendDiff = diff;
                 match = friends[i].name;
                 matchImg = friends[i].pic;
                 console.log("match diff = " + diff);
