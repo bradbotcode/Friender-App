@@ -21,12 +21,8 @@ To install the application follow the instructions below:
 	
 ## Running Locally
 
-To run the application locally and access it in your browser, first set the `PORT` environment variable to the value of your choice. An example is shown below.
-
-	export PORT=3000
+This app is setup to run locally on `PORT 3000`. You can access it from your browser at the URL, `localhost:3000`, once installed.
 	
-After the `PORT` variable has been set, run the Node.js application with the following command:
+Be sure to run the Node.js application with the following command:
 
 	node server.js
-	
-The app is now running locally. You can access it from your browser at the URL `localhost:PORT`.
