@@ -1,6 +1,6 @@
 //data array
 var friendsArr = [{
-        "name": "Michael",
+        "name": "Arnold",
         "pic": "/images/friend1.png",
         "scores": [
             "4",
@@ -16,7 +16,7 @@ var friendsArr = [{
         ]
     },
     {
-        "name": "Howard",
+        "name": "Gerald",
         "pic": "/images/friend2.png",
         "scores": [
             "5",
