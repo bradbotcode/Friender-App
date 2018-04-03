@@ -1,1 +1,2 @@
-# Friender-App
+# Friender
+Survey Based Friend Matching Application
