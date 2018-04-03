@@ -221,8 +221,6 @@
         crossorigin="anonymous"></script>
 
     <script>
-        var compForm;
-
         $(document).ready(function () {
 
             $("#submit").click(function (event) {
@@ -245,14 +243,11 @@
                     ]
                 };
 
-                $.post("/api/friends", formInput)
-                    .done(function (data) {
-                        $("#matchName").text(data.name);
-                        $("#matchImg").attr("src", data.pic);
-                        $("#resultsModal").modal("toggle");
-                        console.log(data.name)
-                        console.log(data.pic)
-                    })
+                $.post("/api/friends", formInput, function (data) {
+                    $("#matchName").text(data.matchName);
+                    $("#matchImg").attr("src", data.matchImg);
+                    $("#resultsModal").modal("toggle");
+                })
             })
         });
     </script>
