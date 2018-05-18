@@ -9,7 +9,7 @@ Survey Based Friend Matching Application
 
 ## Demo
 	
-*Friender* is deployed to Heroku. Please demo it [here](https://salty-fjord-67098.herokuapp.com/).
+*Friender* is deployed to Heroku. Please demo it [here](https://friender-application.herokuapp.com/).
 
 ## Installation
 
